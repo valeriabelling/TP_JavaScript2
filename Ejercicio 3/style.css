@@ -1,0 +1,9 @@
+.form-control {
+    width: 30%;
+}
+
+.boton {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+}

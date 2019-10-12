@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge ">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Sweet Alert</title>
+
+    <script>
+        function validar() {
+            var nom, apell, dir, tel, email = true;
+
+            /*if (nombre.value.length == 0) {
+                nombre.className = "form-control is-invalid";
+                nom = false;
+            } else {
+                nombre.className = "form-control is-valid";
+                nom = true;
+            }
+
+            if (apellido.value.length == 0) {
+                apellido.className = "form-control is-invalid";
+                apell = false;
+            } else {
+                apellido.className = "form-control is-valid";
+                apell = true;
+            }
+
+            if (direccion.value.length == 0) {
+                direccion.className = "form-control is-invalid";
+                dir = false;
+            } else {
+                direccion.className = "form-control is-valid";
+                dir = true;
+            }
+
+            if (telefono.value.length == 0) {
+                telefono.className = "form-control is-invalid";
+                tel = false;
+            } else {
+                telefono.className = "form-control is-valid";
+                tel = true;
+            }
+
+            if (mail.value.length == 0) {
+                mail.className = "form-control is-invalid";
+                email = false;
+            } else {
+                mail.className = "form-control is-valid";
+                email = true;
+            }*/
+
+            if (nombre.value.length != 0) {
+                nombre.className = "form-control is-valid";
+                nom = true;
+            }
+
+            if (apellido.value.length != 0) {
+                apellido.className = "form-control is-valid";
+                apell = true;
+            }
+
+            if (direccion.value.length != 0) {
+                direccion.className = "form-control is-valid";
+                dir = true;
+            }
+
+            if (telefono.value.length != 0) {
+                telefono.className = "form-control is-valid";
+                tel = true;
+            }
+
+            if (mail.value.length != 0) {
+                mail.className = "form-control is-valid";
+                email = true;
+            }
+
+            if (nom && apell && dir && tel && email) {
+                swal({
+                    title: "Datos completos",
+                    text: '¿Desea enviar el formulario?',
+                    icon: "success",
+                    buttons: true,
+                }).then((aceptar) => {
+                    if (aceptar) {
+                        document.formulario.submit();
+                    }
+                })
+            } else {
+                swal({
+                    title: "Datos incompletos",
+                    icon: "error",
+                })
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <form class="was-validated">
+        <div class="form-group">
+            <label for="inputNombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Por favor rellene este campo.</div>
+        </div>
+        <div class="form-group">
+            <label for="inputApellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Por favor rellene este campo.</div>
+        </div>
+        <div class="form-group">
+            <label for="inputDireccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Dirección" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Por favor rellene este campo.</div>
+        </div>
+        <div class="form-group">
+            <label for="inputTelefono">Teléfono</label>
+            <input type="number" class="form-control" id="telefono" placeholder="Teléfono" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Por favor rellene este campo.</div>
+        </div>
+        <div class="form-group">
+            <label for="inputMail">Mail</label>
+            <input type="text" class="form-control" id="mail" placeholder="Mail" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Por favor rellene este campo.</div>
+        </div>
+        <div class="boton">
+            <button type="button" class="btn btn-outline-success" onclick=validar()>Enviar</button>
+        </div>
+
+
+    </form>
+
+
+    <script>
+        var nombre = document.getElementById('nombre');
+        var apellido = document.getElementById('apellido');
+        var direccion = document.getElementById('direccion');
+        var telefono = document.getElementById('telefono');
+        var mail = document.getElementById('mail');
+    </script>
+</body>
+
+</html>
